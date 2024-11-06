@@ -52,6 +52,19 @@ class Model:
         listaNodi.remove(stato)
         return listaNodi
 
+    def getRaggiungibiliRecorsive2(self, stato):
+        path = [stato]
+        self.ricorsione2(path)
+        path.remove(stato)
+        return path
+    def ricorsione2(self, path):
+        vicini = self.grafo.neighbors(path[-1])
+        for n in vicini:
+            if n not in path:
+                path.append(n)
+                self.ricorsione2(path)
+
+
     def getRaggiungibiliRecorsive(self, stato):
         visited = []
         self.ricorsione(stato, visited)

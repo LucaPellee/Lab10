@@ -57,7 +57,7 @@ class Controller:
             return
         else:
             listaNodi = self._model.getRaggiungibiliTree(self.ddCountry)
-            #listaNodi = self._model.getRaggiungibiliRecorsive(self.ddCountry)
+            #listaNodi = self._model.getRaggiungibiliRecorsive2(self.ddCountry)
             self._view._txt_result.controls.clear()
             self._view._txt_result.controls.append(ft.Text(f"Stati raggiunti: {len(listaNodi)}"))
             for n in listaNodi:
